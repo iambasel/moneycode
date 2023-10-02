@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="/" class="w3-bar-item w3-button w3-wide">main dashboard</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="/logout" class="w3-bar-item w3-button"><i class="fa fa-user"></i> log out</a>
+
+
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close &times;</a>
+  <a href="/graede-helper"" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+
+<!-- form -->
+
+
+<div class="w3-center" style="padding:80px">
+  <span  class="w3-xlarge w3-text-black  w3-hide-small"><b>edit your class</b</span><br>
+    <form action="/edit" method="post">
+      <div class="mb-3">
+        <select class="form-select mx-auto w-auto" name="name">
+          <option disabled selected>class</option>
+            {%for course in courses %}
+          <option value='{{course["course"]}}'>{{course["course"]}}</option>
+            {%endfor%}
+          </select>
+        </div>
+      <div class="mb-3">
+        </div>
+      <div class="mb-3">
+         <span  class="w3-large w3-text-black  w3-hide-small"><b>(put your actual grade for exam here otherwise leave it zero)</span><br>
+         <input class="form-control mx-auto w-auto" id="pass" name="mid" placeholder="midterm exam grade" type="number">
+      </div>
+<div class="mb-3">
+  <input class="form-control mx-auto w-auto" id="pass" name="final" placeholder="final exam grade" type="number">
+</div>
+<div class="mb-3">
+  <input class="form-control mx-auto w-auto" id="course_work" name="course_work" placeholder="course work" type="number">
+</div>
+  <div class="mb-3">
+  <button class="btn btn-primary" type="submit">submit</button>
+  </div>
+  </form>
+  </div>
+{%endblock%}

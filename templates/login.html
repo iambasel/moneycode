@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left" style="padding:48px">
+    <span class="w3-jumbo w3-text-white w3-center	w3-hide-small glow">study pal</span><br>
+    <span class="w3-xxlarge w3-text-green">learn more and do more</span>
+
+
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder="confirm Password" type="password">
+        </div>
+        <div class="relative">
+        <button class="btn btn-primary" style="position:relative" type="submit">login</button>
+      </div>
+    <h3 class="w3-text-white">first time?</h3>
+    </form>
+
+    <p><a href="/register" class="w3-button w3-blue w3-padding-large w3-large w3-margin-top  w3-hover-opacity-off">sign up now and start your learning adventure</a></p>
+
+  </div>
+</header>
+{% endblock %}

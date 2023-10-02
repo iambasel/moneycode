@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="/" class="w3-bar-item w3-button w3-wide">main dashboard</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="/logout" class="w3-bar-item w3-button"><i class="fa fa-user"></i> log out</a>
+
+
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close &times;</a>
+  <a href="/graede-helper"" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+<div class="w3-center" style="padding:80px">
+  <form action="newcourse" method="post">
+    <div class="mb-3">
+      <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="course_name" placeholder=" course name" type="text">
+  </div>
+  <div class="mb-3">
+      <input class="form-control mx-auto w-auto" id="password" name="hours" placeholder="hours per week" max="168" type="number">
+  </div>
+  <div class="mb-3">
+    <input class="form-control mx-auto w-auto" id="pass" name="mid_term" placeholder="midterm exam grade" type="number">
+</div>
+<div class="mb-3">
+  <input class="form-control mx-auto w-auto" id="pass" name="final" placeholder="final exam grade" type="number">
+</div>
+<div class="mb-3">
+  <input class="form-control mx-auto w-auto" id="course_work" name="course_work" placeholder="course work" type="number">
+  <label  for="course work">includes (quizes,assignments,etc...)</label> <br>
+      <label  for="name">for the grades put the max grade you can get in each exam not your actual grade(you will put it later) </label>
+
+</div>
+<div class="mb-3">
+  <select class="form-select mx-auto w-auto" name="goal">
+      <option disabled selected>goal</option>
+      <option value="A+">A+</option>
+      <option value="A">A</option>
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B">B</option>
+      <option value="B-">B-</option>
+      <option value="C+">C+</option>
+      <option value="C">C</option>
+      <option value="C-">C-</option>
+  </select>
+</div>
+  <button class="btn btn-primary" type="submit">register course</button
+
+</form>
+  </div>
+
+{% endblock %}
